@@ -8,6 +8,7 @@
     --white-text-color: #FFFFFF;
     --black-text-color: #000000;
     --contact-text-color: rgba(255, 255, 255, 0.6);
+    --comment-modal-color: rgba(117, 117, 117, 0.5);
   
 
     --primary-bg-color: #FFFFFF;
@@ -21,6 +22,8 @@
 
     --border-project-color: #EEEEEE;
     --border-header-color: #ECECEC;
+    --border-modal-input: rgba(33, 33, 33, 0.2);
+    --border-modal-focus: rgba(33, 150, 243, 1);
 
     --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -609,6 +612,8 @@
       position: absolute;
       top: 50%;
       left: 50%;
+
+      padding: 40px;
       
       min-width: 528px;
       min-height: 581px;
@@ -622,6 +627,81 @@
 
     .backdrop.is-hidden .modal {
       transform: translate(-50%, -50%) scale(0)
+    }
+
+    .modal-title {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: calc(23 / 20);
+      text-align: center;
+      margin-bottom: 12px;
+
+    }
+
+
+    .modal-input {
+      width: 100%;
+      height: 40px;
+      
+      padding-left: 40px;
+      outline: transparent;
+
+      border: 1px solid var(--border-modal-input);
+      border-radius: 4px;
+    }
+
+    .modal-input:focus,
+    .modal-comment:focus {
+      border-color: var(--border-modal-focus);
+    }
+
+    .modal-input:focus + .modal-icon {
+      fill: var(--accent-color);
+    }
+
+    .modal-comment {
+      width: 100%;
+      height: 120px;
+      outline: transparent;
+      margin-bottom: 20px;
+      border: 1px solid var(--border-modal-input) ;
+      border-radius: 4px;
+      resize: none;
+      
+    }
+
+    .modal-comment::placeholder {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: calc(14 / 12);
+      letter-spacing: 0.01em;
+      padding: 12px 16px;
+     
+
+      color: var(--comment-modal-color);
+    }
+
+    .input-wrapper {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .modal-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .input-label {
+      display: block;
+      font-size: 12px;
+      line-height: calc(14 / 12);
+      letter-spacing: 0.01em;
+      margin-bottom: 5px;
+
+      color: var(--primary-text-color);
+      
     }
 
 
