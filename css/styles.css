@@ -618,6 +618,12 @@
       color: var(--border-header-color);
 
       background-color: transparent;
+
+      transition: border 250ms var(--timing-function);
+    }
+
+    .footer-input:focus {
+     border: var(--border-modal-focus);
     }
 
     .footer-input::placeholder {
